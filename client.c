@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkwak <jkwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:53:01 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/04 22:36:40 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/05 20:39:45 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ void	to_server(pid_t pid, char *str)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(100);
+		usleep(50);
 		c = c >> 1;
 		if (c == 0)
-			return ;
+		{
+			c = 0x80;
+			i++;
+		}
 	}
 }
 
@@ -42,4 +45,5 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	to_server(ft_atoi(argv[1]), argv[2]);
+	return (0);
 }

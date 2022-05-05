@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkwak <jkwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:54:41 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/04 22:37:41 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/05 20:40:50 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,21 @@
 void	print_sigusr(int signum)
 {
 	static unsigned char	c = 0;
-	static unsigned char	temp = 0x80;
 	static int				i = 0;
 
-	while (i++ < 8)
-	{
 	if (signum == SIGUSR1)
-	{
-		c = c & temp;
-		temp = temp > 1;
-	}
+		c = c | 0;
 	else if (signum == SIGUSR2)
+		c = c | 1;
+	i++;
+	if (i < 8)
+		c = c << 1;
+	else
 	{
-		c = c | temp;
-		temp = temp > 1;
-	}
-	if (!temp)
 		ft_putchar_fd(c, 1);
+		c = 0;
+		i = 0;
 	}
-	// if (signum == SIGUSR2)
-	// 	ft_putchar_fd('1', 1);
-	// if (signum == SIGUSR1)
-	// 	ft_putchar_fd('0', 1);
 }
 
 int	main(void)
@@ -50,6 +43,6 @@ int	main(void)
 	signal(SIGUSR1, print_sigusr);
 	signal(SIGUSR2, print_sigusr);
 	
-	pause();
-	while(1);
+	while(1)
+		pause();
 }
