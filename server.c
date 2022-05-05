@@ -6,7 +6,7 @@
 /*   By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:54:41 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/05 20:40:50 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/05 20:50:08 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <signal.h>
 #include "libft/libft.h"
 
-void	print_sigusr(int signum)
+void	handle_signal(int signum)
 {
 	static unsigned char	c = 0;
 	static int				i = 0;
@@ -40,8 +40,8 @@ int	main(void)
 	ft_putstr_fd(ft_itoa(getpid()), 1);
 	ft_putchar_fd('\n', 1);
 	
-	signal(SIGUSR1, print_sigusr);
-	signal(SIGUSR2, print_sigusr);
+	signal(SIGUSR1, handle_signal);
+	signal(SIGUSR2, handle_signal);
 	
 	while(1)
 		pause();
