@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+         #
+#    By: jkwak <jkwak@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 19:53:05 by jkwak             #+#    #+#              #
-#    Updated: 2022/05/06 13:27:25 by jkwak            ###   ########.fr        #
+#    Updated: 2022/05/06 20:19:11 by jkwak            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 all : $(NAME)
+
+bonus : $(NAME)
 
 $(NAME) : $(SERVER) $(CLIENT)
 

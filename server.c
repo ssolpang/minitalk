@@ -6,7 +6,7 @@
 /*   By: jkwak <jkwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:54:41 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/06 19:18:07 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/06 20:29:52 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 void	handle_signal(int signum)
 {
-	static unsigned char	c = 0;
-	static int				i = 0;
+	static char	c;
+	static int	i;
 
 	if (signum == SIGUSR1)
 		c = c | 0;
