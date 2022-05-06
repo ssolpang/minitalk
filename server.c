@@ -6,7 +6,7 @@
 /*   By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:54:41 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/05 20:50:08 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/06 16:27:27 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,8 @@ int	main(void)
 	ft_putstr_fd("server PID : ", 1);
 	ft_putstr_fd(ft_itoa(getpid()), 1);
 	ft_putchar_fd('\n', 1);
-	
 	signal(SIGUSR1, handle_signal);
 	signal(SIGUSR2, handle_signal);
-	
-	while(1)
+	while (1)
 		pause();
 }

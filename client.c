@@ -6,7 +6,7 @@
 /*   By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:53:01 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/05 20:39:45 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/06 15:58:45 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	to_server(pid_t pid, char *str)
 
 	i = 0;
 	c = 0x80;
-	while(str[i])
+	while (str[i])
 	{
 		if ((str[i] & c) == 0)
 			kill(pid, SIGUSR1);

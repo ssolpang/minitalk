@@ -6,7 +6,7 @@
 #    By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 19:53:05 by jkwak             #+#    #+#              #
-#    Updated: 2022/05/05 20:42:17 by jkwak            ###   ########.fr        #
+#    Updated: 2022/05/06 13:27:25 by jkwak            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ fclean : clean
 		$(RM) $(SERVER) $(CLIENT) $(LIBFT)
 		make fclean -C $(LIBFT_DIR)
 
-re : fclean $(NAME)
+re :
+	make fclean
+	make $(NAME)
 
 .PHONY : all clean fclean re
