@@ -6,7 +6,7 @@
 #    By: jkwak <jkwak@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 19:53:05 by jkwak             #+#    #+#              #
-#    Updated: 2022/05/06 20:19:11 by jkwak            ###   ########.fr        #
+#    Updated: 2022/05/06 20:34:56 by jkwak            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,6 @@ fclean : clean
 
 re :
 	make fclean
-	make $(NAME)
+	make all
 
 .PHONY : all clean fclean re
