@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkwak <jkwak@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkwak <jkwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:54:41 by jkwak             #+#    #+#             */
-/*   Updated: 2022/05/06 16:27:27 by jkwak            ###   ########.fr       */
+/*   Updated: 2022/05/06 19:18:07 by jkwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,11 @@ void	handle_signal(int signum)
 int	main(void)
 {
 	ft_putstr_fd("server PID : ", 1);
-	ft_putstr_fd(ft_itoa(getpid()), 1);
+	ft_putnbr_fd(getpid(), 1);
 	ft_putchar_fd('\n', 1);
 	signal(SIGUSR1, handle_signal);
 	signal(SIGUSR2, handle_signal);
 	while (1)
 		pause();
+	return (0);
 }
